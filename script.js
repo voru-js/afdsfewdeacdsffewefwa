@@ -1,63 +1,71 @@
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  slidesPerView: '2', // Change to 4 if you want 4 at a time
+  centeredSlides: true,
+  spaceBetween: 30,
+  loop: true,
+  speed: 600,
+  on: {
+    slideChangeTransitionStart: function () {
+      updateSlides();
+    } },
+    autoplay: {
+      delay: 3000, // Время в миллисекундах (3 секунды)
+      disableOnInteraction: true, // Продолжать автослайд после взаимодействия
+    },
 
-const wrapper = document.querySelector('.slider-images'); 
-const imagesSlider = wrapper.querySelectorAll('img'); 
-const imageWidth = imagesSlider[0].getBoundingClientRect().width; 
-const gap = 50; 
-let currentIndex = 0; 
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 
 
-function updateSlider() {
-  wrapper.style.transform = `translateX(-${currentIndex * (imageWidth + gap)}px)`; // добавляем отступ между картинками
-  wrapper.style.transition = 'transform 0.5s ease-in-out'; // добавляем плавность
-
-}
-let autoSlideInterval = setInterval(() => {
-  if (currentIndex >= imagesSlider.length - 4)  { //если дошли до 4 последних картинок, то начинаем сначала, иначе череез width оно уходило пока не останется 1 картинка на экране
-    
-    currentIndex = 0; // начинаем сначала
-  } else {
-    currentIndex = (currentIndex + 1) % imagesSlider.length; // идем дальше
+  breakpoints: {
+    // для экранов шириной 768px и меньше
+    768: {
+      slidesPerView: 3,
+     
+    }
   }
-  updateSlider();
-}, 3000); // интервал смены картинок в мс, можно менять на любое время
-
-
-function stopAutoSlide() {
-  clearInterval(autoSlideInterval); // останавливаем автопрокрутку
-}
-
-
-document.querySelector('.right-arrow').addEventListener('click', () => {
-  stopAutoSlide(); // останавливаем автопрокрутку по нажатию на стрелку
-  if (currentIndex >= imagesSlider.length - 4) {
-   // ну соответственно если дошли до 4 последних картинок, то начинаем сначала
-    currentIndex = 0;
-  } else { 
-    currentIndex = (currentIndex + 1) % imagesSlider.length; 
-  }
-  updateSlider(); // обновляем слайдер
 });
 
 
-document.querySelector('.left-arrow').addEventListener('click', () => { // почти такой же код как и выше, только в другую сторону
-  stopAutoSlide(); 
-  currentIndex = (currentIndex - 1 + imagesSlider.length) % imagesSlider.length; 
-  updateSlider();
-});
+function updateSlides() {
+  const slides = document.querySelectorAll('.swiper-slide');
+  slides.forEach(slide => {
+    slide.style.transform = 'scale(0.85)';
+    slide.style.opacity = '0.5';
+  });
+  
+  
+  const activeSlide = document.querySelector('.swiper-slide-active');
+  if (activeSlide) {
+    activeSlide.style.transform = 'scale(1)';
+    activeSlide.style.opacity = '1';
+  }
 
-let start = 0;
-let scrollLeft = 0;
-wrapper.addEventListener('touchstart', (e) => {
-  startX = e.touches[0].clientX; // получаем координаты касания
-  scrollLeft = wrapper.scrollLeft; // получаем текущее положение скролла
-} );
-wrapper.addEventListener('touchmove', (e) => {
-  const x = e.touches[0].clientX; // получаем координаты касания
-  const walk = startX - x; // определяем скорость прокрутки
-  wrapper.scrollLeft = scrollLeft + walk; // прокручиваем слайдер
-})
+  const prevSlide = document.querySelector('.swiper-slide-prev');
+  const nextSlide = document.querySelector('.swiper-slide-next');
+  
+  if (prevSlide) {
+    prevSlide.style.transform = 'scale(0.85)';
+    prevSlide.style.opacity = '0.5';
+  }
+  
+  if (nextSlide) {
+    nextSlide.style.transform = 'scale(0.85)';
+    nextSlide.style.opacity = '0.5';
+  } 
+}
+ 
 // анимация появления элементов при скролле, здесь можно добавить любой класс, только потом в html data-transition добавьте
-function smoothAppearOnScroll() { // добавляем класс к элементу, который будет анимироваться
+ function smoothAppearOnScroll() { // добавляем класс к элементу, который будет анимироваться
   const elements = document.querySelectorAll('.slogan, .about-us-image-container, .about-us-text-container, .maps-h, .slider-title, .slider-container, .slider-wrapper, .accordion-title, .acc-image, .expandable-list');
   const observer = new IntersectionObserver((entries) => { // создаем наблюдатель, который будет отслеживать элементы
     entries.forEach((entry) => { // для каждого элемента
@@ -173,7 +181,7 @@ function fullImages() {
     imageContainer.classList.toggle('active');
     });
 }
-const images = document.querySelectorAll('.imagesslider');
+ const images = document.querySelectorAll('.imagesSwiper');
 const modal = document.getElementById('fullscreenModal');
 const modalImage = modal.querySelector('.fullscreen-image');
 const closeModal = modal.querySelector('.close-modal');
@@ -202,4 +210,4 @@ modal.addEventListener('click', (e) => {
     modal.classList.add('hidden');
     modalImage.src = '';
   }
-});
+}); 
