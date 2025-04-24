@@ -15,13 +15,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" href="images/favicon-32x32.png" type="image/png">
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-    
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"><link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body> <!-- Header section-->
     <header id="header"> 
@@ -83,27 +80,37 @@
         <div class="slider-text-container">
         <h1 class="slider-title" id="slider-title" data-transition="opacity 1.5s ease-in-out, transform 2s ease-in-out">Наш ассортимент</h1>
         </div>
-        <div class="slider-container" data-transition="opacity 1.5s ease-in-out, transform 2s ease-in-out">
-            <button class="slider-arrow right-arrow">&#8250;</button> 
-                <button class="slider-arrow left-arrow">&#8249;</button>
-                </div>
-        <div class="slider-wrapper" data-transition="opacity 1s ease-in-out, transform 2s ease-in-out">
-            <div class="slider-images">
-                <img src="images/slider-image1.jpg" class="imagesslider image1" id="image1" alt="photo 1">
-                <img src="images/slider-image2.jpg" class="imagesslider image1" id="image2" alt="photo 2">
-                <img src="images/slider-image3.jpg" class="imagesslider" id="image3" alt="photo 3"> 
-                <img src="images/slider-image4.jpg" class="imagesslider" id="image4" alt="photo 4">
-                <img src="images/slider-image5.jpg" class="imagesslider" id="image5"alt="photo 5">
-                <img src="images/slider-image6.jpg" class="imagesslider" id="image6" alt="photo 6">
-                <img src="images/slider-image7.jpg" class="imagesslider" id="image7" alt="photo 7">
-                <img src="images/slider-image8.jpg" class="imagesslider" id="image8" alt="photo 8">
-                <img src="images/slider-image9.jpg" class="imagesslider" id="image9" alt="photo 9">
-                <img src="images/slider-image10.jpg" class="imagesslider" id="image10" alt="photo 10">
-                 <img src="https://avatars.mds.yandex.net/get-altay/4079855/2a000001783fb4d5f1cb143bb7bb06fdefe4/XXXL" class="imagesslider" id="image11" alt="photo 11">
-                <img src="https://avatars.mds.yandex.net/get-altay/6314780/2a00000181c87f28ee46da47862ddda25e18/XXXL" class="imagesslider" id="image12"alt="photo 12"> 
+        
+            <!-- Slider main container -->
+<div class="swiper">
+   
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide"><img class="imagesSwiper" src="images/slider-image1.jpg"></div>
+      <div class="swiper-slide"><img class="imagesSwiper" src="images/slider-image2.jpg"></div>
+      <div class="swiper-slide"><img class="imagesSwiper" src="images/slider-image4.jpg"></div>
+      <div class="swiper-slide"><img class="imagesSwiper" src="images/slider-image5.jpg"></div>
+      <div class="swiper-slide"><img class="imagesSwiper" src="images/slider-image6.jpg"></div>
+      <div class="swiper-slide"><img class="imagesSwiper" src="images/slider-image7.jpg"></div>
+      <div class="swiper-slide"><img class="imagesSwiper" src="images/slider-image8.jpg"></div>
+      <div class="swiper-slide"><img class="imagesSwiper" src="images/slider-image9.jpg"></div>
+      <div class="swiper-slide"><img class="imagesSwiper" src="images/slider-image10.jpg"></div>
+      ...
+    </div>
+    
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+    <!-- If we need scrollbar -->
+    
+  </div>
+  
                 
-            </div>
-            </div>
+       
             
 <div id="fullscreenModal" class="fullscreen-modal hidden">
     <span class="close-modal">&times;</span>
@@ -132,15 +139,15 @@
             </div>
             <div class="section"  >
                 <button class="section-title" onclick="toggleSection(this)">Строительные материалы<span class="toggle-icon">+</span></button>
-                <div class="section-content"><p>У нас вы сможете найти всё необходимое для проведения строительных работ и ремонта: утеплители, строительные мешки, гипс, краски, крепеж и многое другое. Продукция подходит как для частных нужд, так и для профессионального строительства.</p></div>
+                <div class="section-content"><p class="section-p">У нас вы сможете найти всё необходимое для проведения строительных работ и ремонта: утеплители, строительные мешки, гипс, краски, крепеж и многое другое. Продукция подходит как для частных нужд, так и для профессионального строительства.</p></div>
             </div>
             <div class="section" >
                 <button class="section-title" onclick="toggleSection(this)">Консультации<span class="toggle-icon">+</span></button>
-                <div class="section-content"><p>Наши специалисты помогут с выбором материалов и сантехники. Расскажем, что лучше использовать в ванной, на кухне или при подключении инсталляции . Даем практичные советы, основанные на опыте и знании рынка. Так же мы работаем с большим количеством специалистов в сфере монтажных и сантехнических работ. Консультации бесплатно, даже если вы просто присматриваетесь</p></div>
+                <div class="section-content"><p class="section-p">Наши специалисты помогут с выбором материалов и сантехники. Расскажем, что лучше использовать в ванной, на кухне или при подключении инсталляции . Даем практичные советы, основанные на опыте и знании рынка. Так же мы работаем с большим количеством специалистов в сфере монтажных и сантехнических работ. Консультации бесплатно, даже если вы просто присматриваетесь</p></div>
             </div>
             </div>
             </div>
-        </section>
+        </section> 
 </main> <!-- Main content ends here -->
        <footer id="footer">
     <div class="footer-container">
@@ -150,15 +157,11 @@
             <p class="footer-text">Телефон: <a href="tel:+375293808246">+375 29 380-82-46</a>, <a href="tel:+375296197197">+375 29 619-71-97</a></p>
             <a href="#http://instagram.com/santehmir_.by" class="social-media-icon"><img class="logos-footer" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png">Instagram</a>
             <a href="#https://viber.click/375293808246" class="social-media-icon"><img class="logos-footer" src="https://cdn.iconscout.com/icon/free/png-256/free-viber-logo-icon-download-in-svg-png-gif-file-formats--social-media-brand-pack-logos-icons-3073752.png">Viber</a>
-            <a href="#https://wa.me/375293808246?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B8%D0%B7+%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81+%D0%9A%D0%B0%D1%80%D1%82%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE+%D0%B2%D0%B0%D1%88%D0%B5+%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" class="social-media-icon"><img class="logos-footer" src="https://cdn4.iconfinder.com/data/icons/miu-square-flat-social/60/whatsapp-square-social-media-512.png">WhatsApp</a>
+            <a href="https://t.me/Dmitry2407" class="social-media-icon"><img class="logos-footer" src="https://cdn.pixabay.com/photo/2021/12/27/10/50/telegram-6896827_1280.png">Telegram</a>
             <h1 class="footer-image-title">Режим работы</h1>
             <p class="footer-image-text">Пн-Пт: 9:00 - 19:00<br>Сб: 10:00 - 16:00 <br>Вс: 10:00 - 14:00</p>
         </div>
-        <!--<div class="social-media-container">
-            <a href="#http://instagram.com/santehmir_.by" class="social-media-icon">Instagram</a>
-            <a href="#https://viber.click/375293808246" class="social-media-icon">Viber</a>
-            <a href="#https://wa.me/375293808246?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B8%D0%B7+%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81+%D0%9A%D0%B0%D1%80%D1%82%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE+%D0%B2%D0%B0%D1%88%D0%B5+%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" class="social-media-icon">WhatsApp</a>
-        </div> -->
+        
     </div>
     
        
@@ -166,6 +169,6 @@
         <img src="images/logo.png" alt="Footer Image" class="footer-image" data-transition="opacity 2s ease-in-out, transform 1s ease-in-out">
         </div>
 </footer>
-
-<script src="script.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
